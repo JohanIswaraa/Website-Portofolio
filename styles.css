@@ -529,37 +529,75 @@ Responsive Fixes (append to styles.css)
 ────────────────────────────────────────*/
 
 /*────────────────────────────────────────
-Quick Responsive Header Fix (add to bottom of styles.css)
+   Mobile‐First Layout Tweaks 
+   (paste at end of styles.css)
 ────────────────────────────────────────*/
 
-/* 1) Center & pad your header-content on all viewports */
+/* 1) Center & pad header content on all viewports */
 header .header-content {
-  max-width: 600px;       /* however wide you like */
-  margin: 0 auto;         /* center it */
-  padding: 0 1rem;        /* give some breathing room */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;  /* breathing room on sides */
 }
 
-/* 2) Stack the buttons full-width under 640px */
-@media (max-width: 640px) {
-  header {
-    padding: 2rem 0;      /* reduce top/bottom padding */
-  }
-  header .header-cta {
+/* 2) Make the two CTA buttons stack + full‐width under 600px */
+@media (max-width: 600px) {
+  .header-cta {
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 1rem;
-    align-items: stretch;
+    margin-top: 1.5rem;
   }
-  header .header-cta .btn {
+  .header-cta .btn {
     width: 100%;
     max-width: none;
   }
 }
 
-/* 3) Hide the “Scroll Down” arrow on small screens */
-@media (max-width: 640px) {
+/* 3) Hide the scroll indicator on phones */
+@media (max-width: 600px) {
   .scroll-indicator {
     display: none;
   }
+}
+
+/* 4) Make the nav links stack vertically under 600px */
+@media (max-width: 600px) {
+  nav .container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  nav .container ul {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+/* 5) Collapse grids to one column under ~500px */
+@media (max-width: 500px) {
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+}
+
+/* 6) Stack contact info + form under 700px */
+@media (max-width: 700px) {
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+/* 7) Tweak type sizing on the smallest phones */
+@media (max-width: 360px) {
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.4rem; }
+  p  { font-size: 0.9rem; }
 }
 
