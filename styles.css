@@ -524,3 +524,71 @@ footer {
     }
 } 
 
+/*────────────────────────────────────────
+Responsive Fixes (append to styles.css)
+────────────────────────────────────────*/
+
+/* 1) Fluid container padding on tablets/phones */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 0 1rem;
+  }
+}
+
+/* 2) Header CTA: stack buttons vertically & full-width */
+@media (max-width: 640px) {
+  .header-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .header-cta .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* 3) Hide “Scroll Down” on narrow screens */
+@media (max-width: 640px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* 4) Nav: vertical menu on mobile */
+@media (max-width: 640px) {
+  nav .container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+  }
+}
+
+/* 5) Grids: single-column below ~500px */
+@media (max-width: 500px) {
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+}
+
+/* 6) Contact section: stack info + form */
+@media (max-width: 768px) {
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+/* 7) Tight type for very small phones */
+@media (max-width: 360px) {
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.4rem; }
+  p  { font-size: 0.9rem; }
+}
