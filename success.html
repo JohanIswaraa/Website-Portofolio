@@ -1,68 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Sent Successfully</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .success-container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-        }
-        .success-icon {
-            font-size: 5rem;
-            margin-bottom: 2rem;
-            animation: scaleUp 0.5s ease-out;
-        }
-        .success-message {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            animation: fadeIn 0.5s ease-out 0.3s both;
-        }
-        .success-submessage {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: fadeIn 0.5s ease-out 0.6s both;
-        }
-        @keyframes scaleUp {
-            from {
-                transform: scale(0);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
-    <meta http-equiv="refresh" content="3;url=https://johaniswara.github.io/portfolio/try1.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Sent Successfully</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- After 3s, go back to the homepage -->
+  <meta http-equiv="refresh" content="3;url=/">
+  <style>
+    :root {
+      --primary-color: #0097B2;
+      --secondary-color: #9DB2CE;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+    .success-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    .success-icon {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      animation: scaleUp 0.5s ease-out forwards;
+    }
+    .success-message {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      animation: fadeIn 0.5s ease-out 0.3s forwards;
+    }
+    .success-submessage {
+      font-size: 1rem;
+      opacity: 0.9;
+      animation: fadeIn 0.5s ease-out 0.6s forwards;
+    }
+    @keyframes scaleUp {
+      from { transform: scale(0.3); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to   { transform: translateY(0);   opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <div class="success-container">
-        <div class="success-icon">✓</div>
-        <h1 class="success-message">Message Sent Successfully!</h1>
-        <p class="success-submessage">Thank you for reaching out. I'll get back to you soon.</p>
-        <p class="success-submessage">Redirecting to homepage in a few seconds...</p>
-    </div>
+  <div class="success-container">
+    <div class="success-icon">✓</div>
+    <h1 class="success-message">Message Sent Successfully!</h1>
+    <p class="success-submessage">Thank you for reaching out. I will get back to you soon.</p>
+    <p class="success-submessage">Redirecting you back to the homepage…</p>
+  </div>
 </body>
-</html> 
+</html>
