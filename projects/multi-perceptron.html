@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Class Perceptron - Project Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="project-details.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="../try1.html">Home</a></li>
+                <li><a href="../try1.html#about">About</a></li>
+                <li><a href="../try1.html#projects">Projects</a></li>
+                <li><a href="../try1.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="project-details">
+        <div class="container">
+            <div class="project-header">
+                <h1>Multi Class Perceptron</h1>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Assignment</span>
+                </div>
+            </div>
+
+            <div class="project-body">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80" alt="Multi Class Perceptron Neural Network" class="project-main-image">
+                
+                <div class="project-section">
+                    <h2>Project Overview</h2>
+                    <p>This project focuses on implementing a Multi-Class Perceptron algorithm to classify flower species in the well-known Iris dataset, which contains three classes: Setosa, Versicolor, and Virginica. The goal is to explore how the perceptron—a foundational supervised learning algorithm—can be adapted to handle more than two classes by using separate weight vectors per class. The project also investigates how training performance is affected by different dataset splits, learning rates, and weight initialization strategies. It emphasizes practical experimentation and performance evaluation through accuracy metrics and confusion matrix analysis.</p>
+                </div>
+
+                <div class="project-section">
+                    <h2>Key Features</h2>
+                    <ul>
+                        <li>Custom Multi-Class Perceptron Implementation from scratch in Python</li>
+                        <li>Support for Hyperparameter Tuning, including learning rate, weight initialization (zero/random), and train-test split ratios</li>
+                        <li>Manual Data Splitting and label encoding to understand data handling without external ML libraries</li>
+                        <li>Built-in Evaluation via Accuracy and Confusion Matrix</li>
+                        <li>Automated Experimentation Loop testing multiple configurations for deeper insight</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2>Technical Details</h2>
+                    <ul>
+                        <li>Dataset: Iris Dataset (150 samples, 4 features, 3 classes)</li>
+                        <li>Language & Libraries: Python using NumPy & Pandas</li>
+                        <li>Model Structure: One weight vector per class, updated through dot product scoring</li>
+                        <li>Training Logic: Iterative weight updates based on misclassification</li>
+                        <li>Learning Rate Options: 0.01 and 0.1</li>
+                        <li>Weight Initialization: Random in [-0.5, 0.5] or zero</li>
+                        <li>Data Split Ratios Tested: 80/20, 70/30, 60/40</li>
+                        <li>Performance Metrics: Training/Test Accuracy, Epochs to Convergence, Confusion Matrix</li>
+                        <li>Convergence Conditions: Zero error or unchanged weights</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2>Results & Learning Outcomes</h2>
+                    <p>The perceptron achieved 100% training accuracy across all configurations, while test accuracy ranged from 93% to 96%, indicating strong generalization. The best performance (96% test accuracy) was observed with a 70/30 split, a learning rate of 0.1, and zero-initialized weights. Random weight initialization often led to faster convergence, requiring fewer epochs. The model perfectly classified the Setosa class due to its linear separability, while most misclassifications occurred between Versicolor and Virginica, whose features overlap. A higher learning rate improved training speed without harming performance, especially on clean, noise-free data like Iris. Additionally, results showed that the initial training data distribution (random seed) had a significant effect on convergence reliability, highlighting the sensitivity of linear models to data ordering and structure. These experiments confirmed that with thoughtful tuning and proper preprocessing, the Multi-Class Perceptron remains a powerful and efficient tool for structured classification problems.</p>
+                </div>
+
+                <div class="project-section">
+                    <h2>Code Showcase</h2>
+                    <div class="code-links">
+                        <a href="https://colab.research.google.com/drive/1vqsHCnrLTmNN08KwhC9qH_fYd5OXjzcO?usp=sharing" target="_blank" class="btn-external">
+                            <i class="fas fa-external-link-alt"></i>View on Google Colab
+                        </a>
+                    </div>
+
+                    <div class="code-snippet">
+                        <h3>Training and Evaluation Results</h3>
+                        <pre><code class="language-python">
+                        Final Results Summary:
+                        Train % Test %  Learning Rate Weight Init Train Acc Test Acc Epochs
+                            80%     20%           0.01        zero 1.00     0.93    524
+                            80%     20%           0.01      random 1.00     0.93    546
+                            80%     20%            0.1        zero 1.00     0.93    524
+                            80%     20%            0.1      random 1.00     0.93    524
+                            70%     30%           0.01        zero 1.00     0.93    440
+                            70%     30%           0.01      random 1.00     0.93    100
+                            70%     30%            0.1        zero 1.00     0.96    349
+                            70%     30%            0.1      random 1.00     0.93    456
+                            60%     40%           0.01        zero 1.00     0.95    467
+                            60%     40%           0.01      random 1.00     0.95    450
+                            60%     40%            0.1        zero 1.00     0.95    451
+                            60%     40%            0.1      random 1.00     0.95    446
+                            </code></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Johan Iswara. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html> 

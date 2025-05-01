@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Prediction System - Project Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="project-details.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="../try1.html">Home</a></li>
+                <li><a href="../try1.html#about">About</a></li>
+                <li><a href="../try1.html#projects">Projects</a></li>
+                <li><a href="../try1.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="project-details">
+        <div class="container">
+            <div class="project-header">
+                <h1>Stroke Prediction System</h1>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Healthcare</span>
+                </div>
+            </div>
+
+            <div class="project-body">
+                <img src="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Stroke Prediction System Dashboard" class="project-main-image">
+                
+                <div class="project-section">
+                    <h2>Project Overview</h2>
+                    <p>Stroke remains one of the leading causes of death and disability worldwide. This project addresses the urgent need for early detection through a predictive AI model that estimates stroke risk using individual medical and lifestyle factors. The system helps identify at-risk patients by analyzing variables such as age, hypertension, glucose levels, BMI, smoking status, and more. The goal is to assist healthcare providers or users—especially in under-resourced areas—by offering a preliminary risk analysis that supports early intervention.</p>
+                </div>
+
+                <div class="project-section">
+                    <h2>Key Features</h2>
+                    <ul>
+                        <li>Predicts stroke risk using health and lifestyle indicators (age, BMI, glucose levels, smoking status, etc.).</li>
+                        <li>Implements two classification strategies: K-Nearest Neighbors and Centroid-Based Classifier.</li>
+                        <li>Includes data preprocessing (missing value handling, encoding, normalization).</li>
+                        <li>Validated with 5-Fold Cross-Validation for reliability.</li>
+                        <li>Designed as a decision-support tool, not a replacement for medical diagnosis.</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2>Technical Details</h2>
+                    <ul>
+                        <li>Dataset: Stroke Prediction Dataset (Kaggle), 5,110 records, binary classification (stroke / no stroke).</li>
+                        <li>Development Platform: Python on Google Colab</li>
+                        <li>Libraries Used: NumPy, Pandas</li>
+                        <li>Distance Metrics: Euclidean Distance, Cosine Similarity & Mahalanobis Distance</li>
+                        <li>Model Evaluation: Accuracy and macro-averaged precision, K values tested: 3, 5, 7 (for KNN), Evaluation via 5-Fold Cross-Validation</li>
+                        <li>Data Processing: One-hot encoding for categorical variables, mean imputation for missing BMI, standard scaling for numerical features.</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2>Results & Impact</h2>
+                    <p>The project demonstrated that K-Nearest Neighbors (KNN), particularly with Cosine Similarity at K=7, delivered the highest accuracy at 94.08%, while the Centroid Classifier using Mahalanobis Distance achieved the highest precision at 56.28%. Overall, KNN models outperformed Centroid-Based methods in handling non-linear health data patterns. However, all models experienced moderate precision due to class imbalance, with stroke cases comprising only about 5% of the dataset. Despite this, the system proves valuable as an early screening tool that can support medical professionals by providing a preliminary stroke risk assessment—especially in underserved regions where immediate diagnosis may not be accessible. The project also highlighted the critical importance of preprocessing, model selection, and evaluation metrics when developing medical AI systems.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2>Code Showcase</h2>
+                    <div class="code-links">
+                        <a href="https://colab.research.google.com/drive/18M7WUSHxu5N4GgkbqYwDuBSvEJJpvVtb?usp=sharing" target="_blank" class="btn-external">
+                            <i class="fas fa-external-link-alt"></i>View on Google Colab
+                        </a>
+                    </div>
+
+                    <div class="code-snippet">
+                        <h3>KNN euclidean_distance Accuracy </h3>
+                        <pre><code class="language-python">
+                            KNN (Euclidean) With K = 3
+                            Fold 1 Accuracy: 0.9305 | Precision: 0.5193
+                            Fold 2 Accuracy: 0.9549 | Precision: 0.5793
+                            Fold 3 Accuracy: 0.9452 | Precision: 0.4773
+                            Fold 4 Accuracy: 0.9500 | Precision: 0.5149
+                            Fold 5 Accuracy: 0.9354 | Precision: 0.5876
+                            
+                            Overall Average Accuracy: 0.9432
+                            Overall Average Precision: 0.5357
+                            KNN (Euclidean) With K = 5
+                            Fold 1 Accuracy: 0.9432 | Precision: 0.5217
+                            Fold 2 Accuracy: 0.9363 | Precision: 0.4747
+                            Fold 3 Accuracy: 0.9432 | Precision: 0.5443
+                            Fold 4 Accuracy: 0.9393 | Precision: 0.5354
+                            Fold 5 Accuracy: 0.9422 | Precision: 0.5094
+                            
+                            Overall Average Accuracy: 0.9408
+                            Overall Average Precision: 0.5171
+                            KNN (Euclidean) With K = 7
+                            Fold 1 Accuracy: 0.9354 | Precision: 0.5075
+                            Fold 2 Accuracy: 0.9403 | Precision: 0.5142
+                            Fold 3 Accuracy: 0.9403 | Precision: 0.5391
+                            Fold 4 Accuracy: 0.9393 | Precision: 0.5164
+                            Fold 5 Accuracy: 0.9500 | Precision: 0.4778
+                            
+                            Overall Average Accuracy: 0.9410
+                            Overall Average Precision: 0.5110
+                        </code></pre>
+                    </div>
+
+                    <div class="code-snippet">
+                        <h3>KKN Implementation euclidean_distance</h3>
+                        <pre><code class="language-python">
+class KNN_euclidean:
+def __init__(self, k = 3):
+    # Defining amount of k-neighbors
+    self.k = k
+
+def fit(self, x_train, y_train):
+    # Saving dataset to the algorithm
+    self.x_train = x_train
+    self.y_train = y_train
+# Using previous distance documentation
+
+def euclidean_distance(self, x, y):
+    return np.sqrt(np.sum((x - y) ** 2))
+
+def predict(self, x_test):
+    # Labels predicting
+    predictions = [self._predict(x) for x in x_test]
+    return np.array(predictions)
+
+def _predict(self, x):
+    # Calculate distances
+    distances = [self.euclidean_distance(x, x_train_) for x_train_ in self.x_train]
+    # Retrieve indices of k nearest neighbors
+    k_indices = np.argsort(distances)[:self.k]
+    # Get the labels of the k nearest neighbors
+    k_nearest_labels = [self.y_train[i] for i in k_indices]
+    # Manually count the occurrences of each label
+    label_counts = {}
+    for label in k_nearest_labels:
+    if label in label_counts:
+        label_counts[label] += 1
+    else:
+        label_counts[label] = 1
+
+    # Find the label with the highest count (majority voting)
+    majority_label = max(label_counts, key=label_counts.get)
+    return majority_label
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Johan Iswara. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+</body>
+</html> 
